@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Cookies from 'universal-cookie';
 import axios from 'axios';
 
-import signinImage from '../assets/envelop.jpg';
+import signinImage from '../assets/logo-darksamp.png';
 
 const cookies = new Cookies();
 
@@ -58,8 +58,7 @@ const Auth = () => {
   return (
     <div className="auth__form-container">
         <div className="auth__form-container_fields">
-            <div className="auth__form-container_fields-content">
-                <h1>BLOCK X MAIL</h1>
+            <div className="auth__form-container_fields-content example">
                 <p>{isSignup ? 'Sign Up' : 'Sign In'}</p>
                 <form onSubmit={handleSubmit}>
                     {isSignup && (
@@ -145,6 +144,7 @@ const Auth = () => {
                         </span>
                     </p>
                 </div>
+                <a className="credits">© 2023 Quiambao & Africa</a>
             </div>
         </div>
         <div className="auth__form-container_image">

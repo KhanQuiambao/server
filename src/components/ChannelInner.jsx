@@ -5,6 +5,7 @@ import { ChannelInfo } from '../assets';
 
 export const GiphyContext = React.createContext({});
 
+
 const ChannelInner = ({ setIsEditing }) => {
   const [giphyState, setGiphyState] = useState(false);
   const { sendMessage } = useChannelActionContext();

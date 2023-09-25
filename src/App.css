@@ -1,7 +1,7 @@
 :root {
-    --primary-color: #005fff;
-    --primary-color-alpha: #005fff1a;
-  }
+    --primary-color: #2F3336;
+    --primary-color-alpha: #2F3336;
+   }
   
   html,
   body {
@@ -12,10 +12,11 @@
   
   #root {
     height: 100%;
+    background-color: #858688;
   }
   
   .auth__form-container {
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     flex-direction: row;
   }
@@ -25,39 +26,51 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-  
+    height: (100vh - 2rem);
     padding: 2rem;
-    background: #005fff;
+    background: #2F3336;
+    
   }
   
   .auth__form-container_image {
     flex: 3;
     display: flex;
-    box-shadow: 1px 0px 5px rgba(0, 0, 0, 0.05);
+    background: #2F3336
+    /* box-shadow: 1px 0px 5px rgba(0, 0, 0, 0.05); */
   }
   
   .auth__form-container_image img {
-    width: 100%;
-    height: 100%;
+    position: relative;
+    width: 500px;
+    height: 500px;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
   }
-  
+  .example::-webkit-scrollbar {
+    display: none;
+  }
   .auth__form-container_fields-content {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-  
+    overflow: scroll;
+    /* overflow-x: hidden; */
     padding: 2rem;
     box-shadow: 0px 1px 5px rgb(0 0 0 / 10%);
-    border-radius: 5px;
+    border-radius: 30px;
     transition: 0.8s ease;
-    background: #fff;
+    background: #F4F6FC;
   }
   
   .auth__form-container_fields-content p {
     font-size: 1.5rem;
     font-family: Arial, Helvetica, sans-serif;
-    color: #05245a;
+    color: #2F3336;
     font-weight: 900;
+    text-align: center;
   }
   
   .auth__form-container_fields-content_input {
@@ -120,8 +133,8 @@
   
   .auth__form-container_fields-content_button button {
     border-radius: 4px;
-    background: #005fff;
-    border: 1px solid #005fff;
+    background: #2F3336;
+    border: 1px solid #2F3336;
     color: #fff;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 500;
@@ -169,10 +182,13 @@
       flex: none;
       box-shadow: none;
     }
-  
-    .auth__form-container_image img {
-      object-fit: cover;
+    .auth__form-container_image img{
+      width: 8rem;
+      height: 6rem;
+      margin-top: 2rem;
     }
+  
+    
   }
   
   @media screen and (max-width: 375px) {
@@ -192,9 +208,7 @@
   .app__wrapper {
     display: flex;
     flex: 1;
-    /* height: 800px; */
     height: 100%;
-    /* border-radius: 16px; */
     box-shadow: rgba(0, 0, 0, 0.33) 0px 1px 4px 0px;
   }
   
@@ -205,6 +219,7 @@
   
   .str-chat-channel {
     height: 100%;
+    
   }
   
   .str-chat__load-more-button {
@@ -311,6 +326,8 @@
   
   .str-chat__list .str-chat__reverse-infinite-scroll {
     padding-top: 0px;
+    /* background-color: #2F3336;
+    /* opacity: 0.6; */
   }
   
   .str-chat__thread-list .channel-empty__container {
@@ -320,6 +337,8 @@
   .str-chat__date-separator {
     padding: 20px 40px;
   }
+
+ 
   
   .custom-thread-header {
     height: 62px;
@@ -360,7 +379,6 @@
     .str-chat__message-actions-box {
     left: initial;
     right: 100%;
-    border-radius: var(--border-radius-md);
   }
   
   .channel-list__container {
@@ -372,11 +390,9 @@
   
   .channel-list__sidebar {
     width: 72px;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-      var(--primary-color);
     box-shadow: 1px 0px 0px rgba(0, 0, 0, 0.25);
-    /* border-top-left-radius: 16px; */
-    /* border-bottom-left-radius: 16px; */
+    background-color: #2F3336;
+    opacity: 0.8;
   }
   
   .channel-list__sidebar__icon1 {
@@ -391,13 +407,17 @@
       #ffffff;
     border-radius: 9999px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.33);
+    cursor: pointer;
   }
   
   .channel-list__list__wrapper {
     display: flex;
     flex-direction: column;
-    background: var(--primary-color);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      var(--primary-color);
     width: 240px;
+    /* border-top-right-radius: 30px; */
+    background-color: #2F3336;
   }
   
   .icon1__inner {
@@ -406,6 +426,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
   }
   
   .channel-list__sidebar__icon2 {
@@ -846,9 +867,11 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
-    background: #ffffff;
+    /* background: #ffffff; */
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      var(--primary-color);
+    background-color: #2F3336;
     box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1);
-    border-top-right-radius: 16px;
     z-index: 1;
   }
   
@@ -865,7 +888,7 @@
     font-family: Helvetica Neue, sans-serif;
     font-weight: bold;
     font-size: 18px;
-    color: #2c2c30;
+    color: #F4F6FC;
     margin-right: 8px;
   }
   
@@ -1129,7 +1152,7 @@
   }
   
   .str-chat__date-separator-date {
-    color: #858688;
+    color: black;
     font-family: Helvetica Neue, sans-serif;
     font-style: normal;
     font-weight: normal;
@@ -1587,6 +1610,7 @@
   
   .str-chat .str-chat__list--thread .str-chat__reverse-infinite-scroll {
     padding-top: 0px;
+
   }
   
   .str-chat__thread-list {
@@ -1709,11 +1733,11 @@
     display: none;
   }
   
-  .channerl-list__container-toggle {
+  .channel-list__container-toggle {
     display: none;
     height: 50px;
     width: 50px;
-    background: #005fff;
+    background: #2f3336;
     position: absolute;
     right: -2%;
     top: 50%;
@@ -1735,6 +1759,8 @@
   .str-chat__input-flat {
     width: 100%;
     padding: 10px;
+    
+    background-color: #F4F6FC;
   }
   
   @media screen and (max-width: 960px) {
@@ -1780,7 +1806,7 @@
       width: 100%;
     }
   
-    .channerl-list__container-toggle {
+    .channel-list__container-toggle {
       display: flex;
     }
   
@@ -1805,7 +1831,7 @@
   }
   
   @media screen and (max-width: 650px) {
-    .channerl-list__container-toggle {
+    .channel-list__container-toggle {
       right: -3%;
     }
   }
@@ -1815,7 +1841,7 @@
       width: 150px;
     }
   
-    .channerl-list__container-toggle {
+    .channel-list__container-toggle {
       right: -5%;
     }
   }
@@ -1825,4 +1851,9 @@
       display: none;
     }
   }
-  
+
+ .credits {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 12px;
+ }
