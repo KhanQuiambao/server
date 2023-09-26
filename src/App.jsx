@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import { StreamChat } from 'stream-chat';
-import { Chat } from 'stream-chat-react';
 import Cookies from 'universal-cookie';
-
-import { ChannelListContainer, ChannelContainer, Auth } from './components';
+import ChatBox from './Chatbox';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import { Auth } from './components';
+import Calendar from './components/Calendar';
 import './app.css';
 import 'stream-chat-react/dist/css/v2/index.css';
 
@@ -27,30 +28,23 @@ if(authToken) {
 
 const App = () => {
 
-  const [createType, setCreateType] = useState('');
-  const [isCreating, setIsCreating] = useState(false);
-  const [isEditing, setIsEditing] = useState(false);
+
 
   if(!authToken) return <Auth />
 
   return (
-    <div className="app__wrapper" theme="team light">
-        <Chat client={client} theme="team light">
-          <ChannelListContainer
-              isCreating={isCreating}
-              setIsCreating={setIsCreating}
-              setCreateType={setCreateType}
-              setIsEditing={setIsEditing}
-          />
-          <ChannelContainer 
-               isCreating={isCreating}
-               setIsCreating={setIsCreating}
-               isEditing={isEditing}
-               setIsEditing={setIsEditing}
-               createType={createType}
-          />
-        </Chat>
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<ChatBox></ChatBox>}></Route>
+          <Route path='/checklist' element={<Calendar></Calendar>}></Route>
+        </Routes>
+      </BrowserRouter>
+    </>
+    // <div className="app__wrapper" theme="team light">
+    //     {/* <ChatBox></ChatBox> */}
+    //     {/* <Calendar></Calendar> */}
+    // </div>
   );
 }
 

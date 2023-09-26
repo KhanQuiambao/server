@@ -392,7 +392,6 @@
     width: 72px;
     box-shadow: 1px 0px 0px rgba(0, 0, 0, 0.25);
     background-color: #2F3336;
-    opacity: 0.8;
   }
   
   .channel-list__sidebar__icon1 {
@@ -430,6 +429,21 @@
   }
   
   .channel-list__sidebar__icon2 {
+    width: 44px;
+    height: 44px;
+    margin: 14px;
+    background: linear-gradient(
+        150.64deg,
+        rgba(0, 0, 0, 0.1) 12.73%,
+        rgba(0, 0, 0, 0) 89.32%
+      ),
+      #ffffff;
+    border-radius: 9999px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.33);
+    cursor: pointer;
+  }
+
+  .channel-list__sidebar__icon3 {
     width: 44px;
     height: 44px;
     margin: 14px;

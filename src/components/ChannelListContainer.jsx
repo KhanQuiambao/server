@@ -1,25 +1,36 @@
 import React, { useState } from 'react';
 import { ChannelList, useChatContext } from 'stream-chat-react';
 import Cookies from 'universal-cookie';
-
 import { ChannelSearch, TeamChannelList, TeamChannelPreview } from './';
-import HospitalIcon from '../assets/logo.png';
+import MailIcon from '../assets/mail.png';
 import LogoutIcon from '../assets/logout.png';
+import CalendarIcon from '../assets/check.png';
 
 const cookies = new Cookies();
 
 const SideBar = ({ logout }) => (
     <div className="channel-list__sidebar">
         <div className="channel-list__sidebar__icon1">
-            <div className="icon1__inner">
-                <img src={HospitalIcon} alt="Mail" width="30" />
+            <a href="/">
+            <div className="icon1__inner" href="asdsa">
+                
+                <img src={MailIcon} alt="Mail" width="30" />
             </div>
+            </a>
+        </div>
+        <div className="channel-list__sidebar__icon3">
+            <a href="/checklist">
+                <div className="icon1__inner">
+                    <img src={CalendarIcon} alt="Calendar" width="30" />
+                </div>
+            </a>
         </div>
         <div className="channel-list__sidebar__icon2">
             <div className="icon1__inner" onClick={logout}>
                 <img src={LogoutIcon} alt="Logout" width="30" />
             </div>
         </div>
+        
     </div>
 );
 
@@ -57,7 +68,7 @@ const ChannelListContent = ({ isCreating, setIsCreating, setCreateType, setIsEdi
     return (
         <>
             <SideBar logout={logout} />
-            <div className="channel-list__list__wrapper">
+            <div className="channel-list__list__wrapper"> 
                 <CompanyHeader />
                 <ChannelSearch setToggleContainer={setToggleContainer} />
                 <ChannelList 
